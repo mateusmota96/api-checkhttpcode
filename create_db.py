@@ -2,14 +2,14 @@ import mysql.connector
 
 # URLS for INSERT into table
 urls = [
-    'http://www.sitedomotao.com.br',
-    'http://www.localhost/'
+    'http://www.example.com',
+    'http://www.example2.com'
 ]
 
 conn = mysql.connector.connect(
-    host="localhost",
-    user="botmon",
-    password="seila123",
+    host="{db_host}",
+    user="{db_user}",
+    password="{db_passwd}",
 )
 c = conn.cursor()
 
