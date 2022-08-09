@@ -10,6 +10,6 @@ def ErrorLog(type, errormessage):
     str_log = str(year) + "-" + str(day) + "-" + str(month) + ".log"
     file = open(str_log, "a")
     date_time_now = "[" + timenow.strftime("%X") + "]-"
-    errormessage = "[" + errormessage + "]"
-    file.write(type + date_time_now + errormessage + "\n")
+    errormessage = "[" + str(errormessage) + "]"
+    file.write(type + date_time_now + str(errormessage) + "\n")
     file.close()
