@@ -20,12 +20,10 @@ def request_http_code(url, notified):
         req = requests.get(url, headers={'User-Agent': request_header}, timeout=10)
         http_code = int(req.status_code)
         status = parser.get('http_error', str(http_code))
-        print(str(http_code) + " " + str(url) + " " + str(status))
         post_status(status, http_code, notified, url)
     except ConnectionError:
         http_code = 404
         status = parser.get('http_error', str(http_code))
-        print(str(http_code) + " " + str(url) + " " + str(status))
         post_status(status, http_code, notified, url)
     except Exception as err:
         ErrorLog('ERROR', err)
